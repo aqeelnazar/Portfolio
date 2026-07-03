@@ -2,12 +2,46 @@
 
 import { FormEvent, useState } from 'react';
 
-export default function ContactForm() {
-  const [submitted, setSubmitted] = useState(false);
+type FormState = {
+  name: string;
+  email: string;
+  message: string;
+};
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+export default function ContactForm() {
+  const [form, setForm] = useState<FormState>({ name: '', email: '', message: '' });
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm({ ...form, [event.target.name]: event.target.value });
+  };
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setSubmitted(true);
+    setError('');
+    setLoading(true);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+
+      if (!response.ok) {
+        const data = await response.json();
+        throw new Error(data.error || 'Failed to send message');
+      }
+
+      setSubmitted(true);
+      setForm({ name: '', email: '', message: '' });
+    } catch (error) {
+      setError(error instanceof Error ? error.message : 'Unknown error');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -20,6 +54,8 @@ export default function ContactForm() {
           id="name"
           name="name"
           type="text"
+          value={form.name}
+          onChange={handleChange}
           required
           className="w-full rounded-2xl border border-slate-300 px-4 py-3 text-sm outline-none transition focus:border-sky-500"
         />
@@ -33,6 +69,8 @@ export default function ContactForm() {
           id="email"
           name="email"
           type="email"
+          value={form.email}
+          onChange={handleChange}
           required
           className="w-full rounded-2xl border border-slate-300 px-4 py-3 text-sm outline-none transition focus:border-sky-500"
         />
@@ -46,6 +84,8 @@ export default function ContactForm() {
           id="message"
           name="message"
           rows={5}
+          value={form.message}
+          onChange={handleChange}
           required
           className="w-full rounded-2xl border border-slate-300 px-4 py-3 text-sm outline-none transition focus:border-sky-500"
         />
@@ -53,14 +93,17 @@ export default function ContactForm() {
 
       <button
         type="submit"
-        className="rounded-full bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-700"
+        disabled={loading}
+        className="rounded-full bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-700 disabled:cursor-not-allowed disabled:bg-slate-500"
       >
-        Send Message
+        {loading ? 'Sending...' : 'Send Message'}
       </button>
 
-      {submitted ? (
+      {submitted && (
         <p className="text-sm font-medium text-emerald-600">Thank you. Your message has been received.</p>
-      ) : null}
+      )}
+
+      {error && <p className="text-sm font-medium text-rose-600">{error}</p>}
     </form>
   );
 }
