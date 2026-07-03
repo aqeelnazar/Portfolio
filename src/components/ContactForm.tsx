@@ -45,9 +45,9 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5 rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+    <form onSubmit={handleSubmit} className="space-y-5 rounded-[32px] border border-slate-800 bg-slate-900/80 p-8 shadow-[0_0_30px_rgba(2,6,23,0.2)]">
       <div>
-        <label htmlFor="name" className="mb-2 block text-sm font-medium text-slate-700">
+        <label htmlFor="name" className="mb-2 block text-sm font-medium text-slate-300">
           Name
         </label>
         <input
@@ -57,12 +57,12 @@ export default function ContactForm() {
           value={form.name}
           onChange={handleChange}
           required
-          className="w-full rounded-2xl border border-slate-300 px-4 py-3 text-sm outline-none transition focus:border-sky-500"
+          className="w-full rounded-2xl border border-slate-700 bg-slate-950/70 px-4 py-3 text-sm text-slate-100 outline-none transition focus:border-cyan-400"
         />
       </div>
 
       <div>
-        <label htmlFor="email" className="mb-2 block text-sm font-medium text-slate-700">
+        <label htmlFor="email" className="mb-2 block text-sm font-medium text-slate-300">
           Email
         </label>
         <input
@@ -72,12 +72,12 @@ export default function ContactForm() {
           value={form.email}
           onChange={handleChange}
           required
-          className="w-full rounded-2xl border border-slate-300 px-4 py-3 text-sm outline-none transition focus:border-sky-500"
+          className="w-full rounded-2xl border border-slate-700 bg-slate-950/70 px-4 py-3 text-sm text-slate-100 outline-none transition focus:border-cyan-400"
         />
       </div>
 
       <div>
-        <label htmlFor="message" className="mb-2 block text-sm font-medium text-slate-700">
+        <label htmlFor="message" className="mb-2 block text-sm font-medium text-slate-300">
           Message
         </label>
         <textarea
@@ -87,23 +87,23 @@ export default function ContactForm() {
           value={form.message}
           onChange={handleChange}
           required
-          className="w-full rounded-2xl border border-slate-300 px-4 py-3 text-sm outline-none transition focus:border-sky-500"
+          className="w-full rounded-2xl border border-slate-700 bg-slate-950/70 px-4 py-3 text-sm text-slate-100 outline-none transition focus:border-cyan-400"
         />
       </div>
 
       <button
         type="submit"
         disabled={loading}
-        className="rounded-full bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-700 disabled:cursor-not-allowed disabled:bg-slate-500"
+        className="rounded-full bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300 disabled:cursor-not-allowed disabled:bg-slate-600 disabled:text-slate-300"
       >
         {loading ? 'Sending...' : 'Send Message'}
       </button>
 
       {submitted && (
-        <p className="text-sm font-medium text-emerald-600">Thank you. Your message has been received.</p>
+        <p className="text-sm font-medium text-emerald-400">Thank you. Your message has been received.</p>
       )}
 
-      {error && <p className="text-sm font-medium text-rose-600">{error}</p>}
+      {error && <p className="text-sm font-medium text-rose-400">{error}</p>}
     </form>
   );
 }
