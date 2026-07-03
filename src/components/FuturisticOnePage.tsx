@@ -43,19 +43,19 @@ export default function FuturisticOnePage() {
   return (
     <div className="space-y-8 pb-12">
       {stage === 'loading' && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[radial-gradient(circle_at_top,_rgba(6,182,212,0.3),_transparent_45%),linear-gradient(135deg,_#020617_0%,_#0f172a_45%,_#111827_100%)]">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[radial-gradient(circle_at_top,_rgba(34,211,238,0.25),_transparent_42%),linear-gradient(135deg,_rgba(2,6,23,1)_0%,_rgba(15,23,42,0.98)_50%,_rgba(30,41,59,1)_100%)]">
           <div className="text-center">
-            <div className="mx-auto h-20 w-20 animate-spin rounded-full border-4 border-cyan-400/30 border-t-cyan-400" />
-            <p className="mt-6 text-sm font-semibold uppercase tracking-[0.35em] text-cyan-300">
+            <div className="mx-auto h-20 w-20 animate-spin rounded-full border-4 border-cyan-400/25 border-t-cyan-300" />
+            <p className="mt-6 text-sm font-semibold uppercase tracking-[0.35em] text-cyan-200">
               Initializing portfolio
             </p>
-            <h2 className="mt-3 text-3xl font-semibold text-white">Welcome to my digital world</h2>
+            <h2 className="mt-3 text-3xl font-semibold text-slate-100">Welcome to my digital world</h2>
           </div>
         </div>
       )}
 
-      <section className="relative overflow-hidden rounded-[32px] border border-cyan-400/20 bg-slate-950/90 p-8 shadow-[0_0_80px_rgba(34,211,238,0.12)] md:p-12">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(34,211,238,0.2),_transparent_35%),radial-gradient(circle_at_bottom_right,_rgba(147,197,253,0.2),_transparent_35%)]" />
+      <section className="relative overflow-hidden rounded-[32px] border border-cyan-400/20 bg-[linear-gradient(135deg,rgba(2,6,23,0.98),rgba(15,23,42,0.95))] p-8 shadow-[0_0_90px_rgba(8,145,178,0.16)] md:p-12">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(34,211,238,0.18),_transparent_32%),radial-gradient(circle_at_bottom_right,_rgba(96,165,250,0.14),_transparent_34%)]" />
         <div className="relative grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <Reveal active={isRevealed('profile')}>
             <div className="space-y-6">
@@ -105,23 +105,23 @@ export default function FuturisticOnePage() {
       </section>
 
       <Reveal active={isRevealed('about')}>
-        <section className="rounded-[32px] border border-white/10 bg-white/80 p-8 shadow-sm backdrop-blur md:p-10">
-          <div className="flex items-center justify-between">
+        <section className="rounded-[32px] border border-slate-800 bg-[linear-gradient(135deg,rgba(15,23,42,0.98),rgba(30,41,59,0.95))] p-8 shadow-[0_0_50px_rgba(15,23,42,0.25)] backdrop-blur md:p-10">
+          <div className="flex items-center justify-between gap-3">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.35em] text-cyan-600">About</p>
-              <h2 className="mt-2 text-2xl font-semibold text-slate-900">A curious developer building meaningful experiences</h2>
+              <p className="text-sm font-semibold uppercase tracking-[0.35em] text-cyan-300">About</p>
+              <h2 className="mt-2 text-2xl font-semibold text-slate-100">A curious developer building meaningful experiences</h2>
             </div>
-            <div className="hidden rounded-full bg-cyan-100 px-4 py-2 text-sm font-medium text-cyan-700 md:block">
+            <div className="hidden rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-200 md:block">
               Available for opportunities
             </div>
           </div>
           <div className="mt-6 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-            <div className="rounded-2xl bg-slate-950 p-6 text-slate-200">
+            <div className="rounded-2xl border border-slate-700/80 bg-slate-950/70 p-6 text-slate-200">
               <p className="text-lg leading-8">{profile.about}</p>
             </div>
-            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
-              <h3 className="text-lg font-semibold text-slate-900">Quick highlights</h3>
-              <ul className="mt-4 space-y-3 text-sm text-slate-600">
+            <div className="rounded-2xl border border-slate-700/80 bg-slate-900/70 p-6">
+              <h3 className="text-lg font-semibold text-slate-100">Quick highlights</h3>
+              <ul className="mt-4 space-y-3 text-sm text-slate-300">
                 <li>• Passionate about problem-solving and modern web experiences</li>
                 <li>• Comfortable with Java, React, databases, and UI/UX concepts</li>
                 <li>• Focused on building polished, user-friendly applications</li>
@@ -132,7 +132,7 @@ export default function FuturisticOnePage() {
       </Reveal>
 
       <Reveal active={isRevealed('skills')}>
-        <section className="rounded-[32px] border border-white/10 bg-slate-950/90 p-8 text-white shadow-[0_0_60px_rgba(15,23,42,0.2)] md:p-10">
+        <section className="rounded-[32px] border border-slate-800 bg-[linear-gradient(135deg,rgba(2,6,23,0.98),rgba(15,23,42,0.95))] p-8 text-white shadow-[0_0_60px_rgba(2,6,23,0.25)] md:p-10">
           <div className="flex items-center justify-between gap-3">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.35em] text-cyan-300">Skills</p>
@@ -142,7 +142,7 @@ export default function FuturisticOnePage() {
 
           <div className="mt-8 grid gap-6 lg:grid-cols-2">
             {technicalSkills.map((group) => (
-              <div key={group.category} className="rounded-2xl border border-white/10 bg-white/10 p-6 backdrop-blur">
+              <div key={group.category} className="rounded-2xl border border-slate-700/80 bg-slate-900/70 p-6 backdrop-blur">
                 <h3 className="text-lg font-semibold text-cyan-200">{group.category}</h3>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {group.items.map((skill) => (
@@ -156,7 +156,7 @@ export default function FuturisticOnePage() {
           </div>
 
           <div className="mt-8 grid gap-6 md:grid-cols-3">
-            <div className="rounded-2xl border border-white/10 bg-white/10 p-6">
+            <div className="rounded-2xl border border-slate-700/80 bg-slate-900/70 p-6">
               <h3 className="text-lg font-semibold text-cyan-200">Soft Skills</h3>
               <ul className="mt-4 space-y-2 text-sm text-slate-300">
                 {softSkills.map((skill) => (
@@ -164,7 +164,7 @@ export default function FuturisticOnePage() {
                 ))}
               </ul>
             </div>
-            <div className="rounded-2xl border border-white/10 bg-white/10 p-6">
+            <div className="rounded-2xl border border-slate-700/80 bg-slate-900/70 p-6">
               <h3 className="text-lg font-semibold text-cyan-200">Languages</h3>
               <ul className="mt-4 space-y-2 text-sm text-slate-300">
                 {languages.map((language) => (
@@ -172,7 +172,7 @@ export default function FuturisticOnePage() {
                 ))}
               </ul>
             </div>
-            <div className="rounded-2xl border border-white/10 bg-white/10 p-6">
+            <div className="rounded-2xl border border-slate-700/80 bg-slate-900/70 p-6">
               <h3 className="text-lg font-semibold text-cyan-200">Focus Areas</h3>
               <ul className="mt-4 space-y-2 text-sm text-slate-300">
                 <li>• Web development</li>
@@ -185,22 +185,22 @@ export default function FuturisticOnePage() {
       </Reveal>
 
       <Reveal active={isRevealed('education')}>
-        <section id="education" className="rounded-[32px] border border-slate-200 bg-white p-8 shadow-sm md:p-10">
-          <p className="text-sm font-semibold uppercase tracking-[0.35em] text-cyan-600">Education</p>
-          <h2 className="mt-2 text-2xl font-semibold text-slate-900">Academic path and achievements</h2>
+        <section id="education" className="rounded-[32px] border border-slate-800 bg-[linear-gradient(135deg,rgba(15,23,42,0.98),rgba(30,41,59,0.95))] p-8 shadow-[0_0_45px_rgba(15,23,42,0.2)] md:p-10">
+          <p className="text-sm font-semibold uppercase tracking-[0.35em] text-cyan-300">Education</p>
+          <h2 className="mt-2 text-2xl font-semibold text-slate-100">Academic path and achievements</h2>
           <div className="mt-8 grid gap-6 lg:grid-cols-[1fr_0.9fr]">
             <div className="space-y-4">
               {education.map((item) => (
-                <div key={item.degree} className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-600">{item.period}</p>
-                  <h3 className="mt-2 text-lg font-semibold text-slate-900">{item.degree}</h3>
-                  <p className="mt-1 text-slate-700">{item.institution}</p>
-                  <p className="mt-1 text-sm text-slate-500">{item.location}</p>
+                <div key={item.degree} className="rounded-2xl border border-slate-700/80 bg-slate-900/70 p-5">
+                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">{item.period}</p>
+                  <h3 className="mt-2 text-lg font-semibold text-slate-100">{item.degree}</h3>
+                  <p className="mt-1 text-slate-300">{item.institution}</p>
+                  <p className="mt-1 text-sm text-slate-400">{item.location}</p>
                 </div>
               ))}
             </div>
             <div className="space-y-4">
-              <div className="rounded-2xl bg-slate-950 p-6 text-slate-200">
+              <div className="rounded-2xl border border-slate-700/80 bg-slate-950/80 p-6 text-slate-200">
                 <h3 className="text-lg font-semibold text-white">Achievements</h3>
                 <ul className="mt-4 space-y-2 text-sm text-slate-300">
                   {achievements.map((achievement) => (
@@ -208,9 +208,9 @@ export default function FuturisticOnePage() {
                   ))}
                 </ul>
               </div>
-              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
-                <h3 className="text-lg font-semibold text-slate-900">Certifications</h3>
-                <ul className="mt-4 space-y-2 text-sm text-slate-600">
+              <div className="rounded-2xl border border-slate-700/80 bg-slate-900/70 p-6">
+                <h3 className="text-lg font-semibold text-slate-100">Certifications</h3>
+                <ul className="mt-4 space-y-2 text-sm text-slate-300">
                   {certifications.map((certification) => (
                     <li key={certification}>• {certification}</li>
                   ))}
@@ -222,38 +222,38 @@ export default function FuturisticOnePage() {
       </Reveal>
 
       <Reveal active={isRevealed('projects')}>
-        <section id="projects" className="rounded-[32px] border border-slate-200 bg-white p-8 shadow-sm md:p-10">
+        <section id="projects" className="rounded-[32px] border border-slate-800 bg-[linear-gradient(135deg,rgba(15,23,42,0.98),rgba(30,41,59,0.95))] p-8 shadow-[0_0_45px_rgba(15,23,42,0.2)] md:p-10">
           <div className="flex items-center justify-between gap-3">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.35em] text-cyan-600">Projects</p>
-              <h2 className="mt-2 text-2xl font-semibold text-slate-900">Selected work and case studies</h2>
+              <p className="text-sm font-semibold uppercase tracking-[0.35em] text-cyan-300">Projects</p>
+              <h2 className="mt-2 text-2xl font-semibold text-slate-100">Selected work and case studies</h2>
             </div>
-            <Link href="/projects" className="text-sm font-semibold text-cyan-700 hover:text-cyan-800">
+            <Link href="/projects" className="text-sm font-semibold text-cyan-300 hover:text-cyan-200">
               View all
             </Link>
           </div>
 
           <div className="mt-8 grid gap-6 lg:grid-cols-2">
             {projects.map((project) => (
-              <div key={project.id} className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+              <div key={project.id} className="rounded-2xl border border-slate-700/80 bg-slate-900/70 p-6">
                 <div className="flex items-center justify-between gap-3">
-                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-600">
+                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">
                     {project.category}
                   </p>
-                  <span className="rounded-full bg-white px-3 py-1 text-xs font-medium text-slate-600 shadow-sm">
+                  <span className="rounded-full border border-slate-700 bg-slate-950/80 px-3 py-1 text-xs font-medium text-slate-300 shadow-sm">
                     {project.period}
                   </span>
                 </div>
-                <h3 className="mt-4 text-xl font-semibold text-slate-900">{project.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-slate-600">{project.description}</p>
+                <h3 className="mt-4 text-xl font-semibold text-slate-100">{project.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-300">{project.description}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {project.skills.map((skill) => (
-                    <span key={skill} className="rounded-full bg-white px-3 py-1 text-sm font-medium text-slate-700 shadow-sm">
+                    <span key={skill} className="rounded-full border border-slate-700 bg-slate-950/80 px-3 py-1 text-sm font-medium text-slate-200 shadow-sm">
                       {skill}
                     </span>
                   ))}
                 </div>
-                <Link href={`/projects/${project.slug}`} className="mt-6 inline-flex text-sm font-semibold text-cyan-700 hover:text-cyan-800">
+                <Link href={`/projects/${project.slug}`} className="mt-6 inline-flex text-sm font-semibold text-cyan-300 hover:text-cyan-200">
                   Read more →
                 </Link>
               </div>
