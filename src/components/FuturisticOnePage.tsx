@@ -90,7 +90,7 @@ export default function FuturisticOnePage() {
             <div className="rounded-[28px] border border-white/10 bg-white/10 p-6 backdrop-blur-xl">
               <div className="relative mx-auto flex h-64 w-64 items-center justify-center rounded-full border border-cyan-300/30 bg-gradient-to-br from-cyan-400/20 to-slate-900 p-3 shadow-[0_0_40px_rgba(34,211,238,0.2)]">
                 <img
-                  src="/profile-photo.svg"
+                  src="/aqeel.png"
                   alt={profile.name}
                   className="h-full w-full rounded-full object-cover"
                 />
