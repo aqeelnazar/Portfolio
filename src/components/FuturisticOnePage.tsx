@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { ReactNode, useEffect, useState } from 'react';
 import InteractiveCard from '@/components/InteractiveCard';
-import TechOrbit from '@/components/TechOrbit';
+import ProgrammingGlobe from '@/components/ProgrammingGlobe';
 import { achievements, education } from '@/data/education';
 import { profile } from '@/data/profile';
 import { projects } from '@/data/projects';
@@ -87,10 +87,13 @@ export default function FuturisticOnePage() {
           </Reveal>
 
           <Reveal active={isRevealed('profile')}>
-            <div className="portfolio-float relative">
-              <TechOrbit />
-              <div className="absolute inset-x-0 bottom-8 mx-auto h-40 w-40 rounded-full border border-cyan-300/30 bg-slate-950/80 p-2 shadow-[0_0_42px_rgba(34,211,238,0.24)]">
-                <img src="/aqeel.png" alt={profile.name} className="h-full w-full rounded-full object-cover" />
+            <div className="portfolio-float mx-auto w-full max-w-[420px]">
+              <div className="relative overflow-hidden rounded-[32px] border border-cyan-300/20 bg-[radial-gradient(circle_at_50%_20%,rgba(34,211,238,0.18),rgba(15,23,42,0.78)_45%,rgba(2,6,23,0.96)_100%)] p-6 shadow-[0_0_80px_rgba(34,211,238,0.14)]">
+                <div className="absolute inset-6 rounded-full border border-cyan-300/10" />
+                <div className="absolute inset-12 rounded-full border border-white/10" />
+                <div className="relative mx-auto aspect-square max-w-[320px] overflow-hidden rounded-full border border-cyan-300/30 bg-slate-950/80 p-3 shadow-[0_0_48px_rgba(34,211,238,0.24)]">
+                  <img src="/aqeel.png" alt={profile.name} className="h-full w-full rounded-full object-cover" />
+                </div>
               </div>
             </div>
           </Reveal>
@@ -143,6 +146,9 @@ export default function FuturisticOnePage() {
                 {item}
               </span>
             ))}
+          </div>
+          <div className="mt-8">
+            <ProgrammingGlobe />
           </div>
         </section>
       </Reveal>
