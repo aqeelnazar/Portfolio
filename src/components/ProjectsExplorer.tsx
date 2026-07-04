@@ -18,6 +18,7 @@ export default function ProjectsExplorer({ projects }: { projects: Project[] }) 
           <button
             key={category}
             type="button"
+            data-project-filter={activeCategory === category ? 'active' : 'idle'}
             onClick={() => setActiveCategory(category)}
             className={`rounded-full border px-4 py-2 text-sm font-semibold transition ${
               activeCategory === category
