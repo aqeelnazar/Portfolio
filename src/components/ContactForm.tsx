@@ -45,7 +45,7 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5 rounded-[32px] border border-slate-800 bg-slate-900/80 p-8 shadow-[0_0_30px_rgba(2,6,23,0.2)]">
+    <form onSubmit={handleSubmit} className="space-y-5 rounded-[32px] border border-slate-800 bg-slate-900/80 p-8 shadow-[0_0_50px_rgba(2,6,23,0.25)]">
       <div>
         <label htmlFor="name" className="mb-2 block text-sm font-medium text-slate-300">
           Name
@@ -57,7 +57,7 @@ export default function ContactForm() {
           value={form.name}
           onChange={handleChange}
           required
-          className="w-full rounded-2xl border border-slate-700 bg-slate-950/70 px-4 py-3 text-sm text-slate-100 outline-none transition focus:border-cyan-400"
+          className="w-full rounded-2xl border border-slate-700 bg-slate-950/70 px-4 py-3 text-sm text-slate-100 outline-none transition focus:border-cyan-400 focus:shadow-[0_0_24px_rgba(34,211,238,0.14)]"
         />
       </div>
 
@@ -72,7 +72,7 @@ export default function ContactForm() {
           value={form.email}
           onChange={handleChange}
           required
-          className="w-full rounded-2xl border border-slate-700 bg-slate-950/70 px-4 py-3 text-sm text-slate-100 outline-none transition focus:border-cyan-400"
+          className="w-full rounded-2xl border border-slate-700 bg-slate-950/70 px-4 py-3 text-sm text-slate-100 outline-none transition focus:border-cyan-400 focus:shadow-[0_0_24px_rgba(34,211,238,0.14)]"
         />
       </div>
 
@@ -87,14 +87,14 @@ export default function ContactForm() {
           value={form.message}
           onChange={handleChange}
           required
-          className="w-full rounded-2xl border border-slate-700 bg-slate-950/70 px-4 py-3 text-sm text-slate-100 outline-none transition focus:border-cyan-400"
+          className="w-full rounded-2xl border border-slate-700 bg-slate-950/70 px-4 py-3 text-sm text-slate-100 outline-none transition focus:border-cyan-400 focus:shadow-[0_0_24px_rgba(34,211,238,0.14)]"
         />
       </div>
 
       <button
         type="submit"
         disabled={loading}
-        className="rounded-full bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300 disabled:cursor-not-allowed disabled:bg-slate-600 disabled:text-slate-300"
+        className="rounded-full bg-cyan-300 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:bg-cyan-200 disabled:cursor-not-allowed disabled:bg-slate-600 disabled:text-slate-300"
       >
         {loading ? 'Sending...' : 'Send Message'}
       </button>
