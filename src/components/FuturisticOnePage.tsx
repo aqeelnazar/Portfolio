@@ -47,9 +47,9 @@ export default function FuturisticOnePage() {
           <div className="text-center">
             <div className="mx-auto h-20 w-20 animate-spin rounded-full border-4 border-cyan-400/25 border-t-cyan-300" />
             <p className="mt-6 text-sm font-semibold uppercase tracking-[0.35em] text-cyan-200">
-              Initializing portfolio
+              Loading Portfolio
             </p>
-            <h2 className="mt-3 text-3xl font-semibold text-slate-100">Welcome to my digital world</h2>
+            <h2 className="mt-3 text-3xl font-semibold text-slate-100">W E L C O M E</h2>
           </div>
         </div>
       )}
@@ -59,9 +59,6 @@ export default function FuturisticOnePage() {
         <div className="relative grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <Reveal active={isRevealed('profile')}>
             <div className="space-y-6">
-              <p className="text-sm font-semibold uppercase tracking-[0.35em] text-cyan-300">
-                Futuristic Portfolio
-              </p>
               <div className="space-y-3">
                 <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
                   {profile.name}
@@ -96,8 +93,8 @@ export default function FuturisticOnePage() {
                 />
               </div>
               <div className="mt-6 space-y-2 text-center text-sm text-slate-300">
-                <p className="text-lg font-semibold text-white">{profile.location}</p>
-                <p>{profile.email}</p>
+                {/*<p>{profile.email}</p>
+                <p className="text-lg font-semibold text-white">{profile.location}</p>*/}
               </div>
             </div>
           </Reveal>
