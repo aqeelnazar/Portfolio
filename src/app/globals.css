@@ -13,3 +13,54 @@ html {
 body {
   @apply bg-slate-950 text-slate-900 antialiased;
 }
+
+@keyframes portfolio-orbit {
+  from {
+    transform: rotateX(68deg) rotateZ(0deg);
+  }
+  to {
+    transform: rotateX(68deg) rotateZ(360deg);
+  }
+}
+
+@keyframes portfolio-orbit-slow {
+  from {
+    transform: rotateX(58deg) rotateY(18deg) rotateZ(0deg);
+  }
+  to {
+    transform: rotateX(58deg) rotateY(18deg) rotateZ(-360deg);
+  }
+}
+
+@keyframes portfolio-float {
+  0%,
+  100% {
+    transform: translateY(0) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: translateY(-14px) rotateX(6deg) rotateY(-8deg);
+  }
+}
+
+.portfolio-orbit {
+  animation: portfolio-orbit 12s linear infinite;
+}
+
+.portfolio-orbit-slow {
+  animation: portfolio-orbit-slow 18s linear infinite;
+}
+
+.portfolio-float {
+  animation: portfolio-float 6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
