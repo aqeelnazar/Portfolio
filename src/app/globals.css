@@ -42,6 +42,33 @@ body {
   }
 }
 
+@keyframes programming-globe-spin {
+  from {
+    transform: rotateX(-12deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(-12deg) rotateY(360deg);
+  }
+}
+
+@keyframes programming-globe-ring {
+  from {
+    transform: rotateX(72deg) rotateZ(0deg);
+  }
+  to {
+    transform: rotateX(72deg) rotateZ(360deg);
+  }
+}
+
+@keyframes programming-globe-ring-alt {
+  from {
+    transform: rotateY(72deg) rotateZ(0deg);
+  }
+  to {
+    transform: rotateY(72deg) rotateZ(-360deg);
+  }
+}
+
 .portfolio-orbit {
   animation: portfolio-orbit 12s linear infinite;
 }
@@ -54,6 +81,22 @@ body {
   animation: portfolio-float 6s ease-in-out infinite;
 }
 
+.programming-globe {
+  animation: programming-globe-spin 18s linear infinite;
+}
+
+.programming-globe-manual {
+  transition: transform 120ms ease-out;
+}
+
+.programming-globe-ring {
+  animation: programming-globe-ring 10s linear infinite;
+}
+
+.programming-globe-ring-alt {
+  animation: programming-globe-ring-alt 14s linear infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -62,5 +105,9 @@ body {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .programming-globe {
+    transform: rotateX(-12deg) rotateY(28deg);
   }
 }
