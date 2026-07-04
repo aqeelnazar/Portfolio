@@ -1,4 +1,3 @@
-import ViewCounter from './ViewCounter';
 import { profile } from '@/data/profile';
 import { socialLinks } from '@/data/social';
 
@@ -26,7 +25,6 @@ export default function Footer() {
           ))}
         </div>
         <p>&copy; 2026 Mohamed Aqeel. All rights reserved.</p>
-        <ViewCounter />
       </div>
     </footer>
   );

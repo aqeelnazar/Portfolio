@@ -6,10 +6,11 @@ type FormState = {
   name: string;
   email: string;
   message: string;
+  website: string;
 };
 
 export default function ContactForm() {
-  const [form, setForm] = useState<FormState>({ name: '', email: '', message: '' });
+  const [form, setForm] = useState<FormState>({ name: '', email: '', message: '', website: '' });
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -36,7 +37,7 @@ export default function ContactForm() {
       }
 
       setSubmitted(true);
-      setForm({ name: '', email: '', message: '' });
+      setForm({ name: '', email: '', message: '', website: '' });
     } catch (error) {
       setError(error instanceof Error ? error.message : 'Unknown error');
     } finally {
@@ -46,6 +47,19 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5 rounded-[32px] border border-slate-800 bg-slate-900/80 p-8 shadow-[0_0_50px_rgba(2,6,23,0.25)]">
+      <div className="hidden" aria-hidden="true">
+        <label htmlFor="website">Website</label>
+        <input
+          id="website"
+          name="website"
+          type="text"
+          value={form.website}
+          onChange={handleChange}
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
+
       <div>
         <label htmlFor="name" className="mb-2 block text-sm font-medium text-slate-300">
           Name
