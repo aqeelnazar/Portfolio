@@ -1,24 +1,31 @@
 import PageLayout from '@/components/PageLayout';
-import ProjectCard from '@/components/ProjectCard';
+import ProjectsExplorer from '@/components/ProjectsExplorer';
+import SectionHeader from '@/components/SectionHeader';
 import { projects } from '@/data/projects';
 
 export default function ProjectsPage() {
   return (
     <PageLayout>
-      <div className="space-y-8">
-        <section className="rounded-[32px] border border-slate-800 bg-[linear-gradient(135deg,rgba(15,23,42,0.98),rgba(30,41,59,0.95))] p-8 shadow-[0_0_50px_rgba(15,23,42,0.25)] md:p-10">
-          <p className="text-sm font-semibold uppercase tracking-[0.35em] text-cyan-300">Projects</p>
-          <h1 className="mt-3 text-3xl font-bold text-slate-100">Featured Projects</h1>
-          <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-300">
-            A selection of web and mobile projects that reflect my growth in development, design, and problem-solving.
-          </p>
+      <div className="space-y-10">
+        <section className="grid gap-8 rounded-[32px] border border-slate-800 bg-slate-950/65 p-8 md:p-10 lg:grid-cols-[1fr_0.7fr] lg:items-center">
+          <SectionHeader
+            label="Projects"
+            title="Interactive project lab"
+            description="Filter through selected web and mobile projects that show development, design, and problem-solving growth."
+          />
+          <div className="portfolio-float hidden rounded-[32px] border border-cyan-300/20 bg-[radial-gradient(circle_at_50%_35%,rgba(34,211,238,0.2),rgba(15,23,42,0.9)_58%)] p-6 shadow-[0_0_70px_rgba(34,211,238,0.12)] lg:block">
+            <div className="rounded-[24px] border border-white/10 bg-slate-950/80 p-5">
+              <div className="h-3 w-24 rounded-full bg-cyan-300/40" />
+              <div className="mt-5 grid gap-3">
+                <div className="h-20 rounded-2xl bg-cyan-300/10" />
+                <div className="h-12 rounded-2xl bg-violet-300/10" />
+                <div className="h-12 rounded-2xl bg-emerald-300/10" />
+              </div>
+            </div>
+          </div>
         </section>
 
-        <section className="grid gap-6 lg:grid-cols-2">
-          {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
-        </section>
+        <ProjectsExplorer projects={projects} />
       </div>
     </PageLayout>
   );
